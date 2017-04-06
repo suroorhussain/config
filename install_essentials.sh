@@ -1,2 +1,2 @@
 apt-get update
-apt-get install git tmux emacs virtualenv
+apt-get install git tmux emacs virtualenv virtualenvwrapper
