@@ -1,0 +1,13 @@
+[user]
+	name = suroor
+	email = surusuroor@gmail.com
+[pull]
+	rebase = True
+[alias]
+	st = status
+	c  = commit
+	br = branch
+	co = checkout
+	lg = log -p
+	unstage = reset HEAD
+	
