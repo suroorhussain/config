@@ -60,6 +60,7 @@
 ;; toggle useful modes on
 (show-paren-mode t)
 (iswitchb-mode t)
+(projectile-global-mode)
 
 ;; Start server
 (server-start)
@@ -69,7 +70,7 @@
 (tool-bar-mode 0)
 
 ;; Activate projectile mode
-(add-hook 'after-init-hook #'projectile-mode)
+;;(add-hook 'after-init-hook #'projectile-mode)
 
 ;; (global-flycheck-mode)
 
