@@ -30,7 +30,7 @@
 
 
 ; list the packages you want
-(setq package-list '(projectile magit))
+(setq package-list '(projectile magit nlinum))
 
 ; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
@@ -61,6 +61,7 @@
 (show-paren-mode t)
 (iswitchb-mode t)
 (projectile-global-mode)
+(global-nlinum-mode t)
 
 ;; Start server
 (server-start)
