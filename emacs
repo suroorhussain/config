@@ -80,6 +80,12 @@
 
 ;; (global-flycheck-mode)
 
+;; set web-mode as default html editor
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; Command to activate django mode
+(defun webd () (interactive) (web-mode-set-engine "django"))
+
 (when (load "flymake" t)
   (defun flymake-pylint-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
