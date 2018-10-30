@@ -75,6 +75,9 @@
 ;; Activate projectile mode
 ;;(add-hook 'after-init-hook #'projectile-mode)
 
+;; Add hooks for golang
+(add-hook 'before-save-hook 'gofmt-before-save)
+
 ;; (global-flycheck-mode)
 
 (when (load "flymake" t)
