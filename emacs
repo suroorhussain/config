@@ -32,7 +32,7 @@
 
 
 ; list the packages you want
-(setq package-list '(projectile magit nlinum))
+(setq package-list '(projectile magit nlinum web ))
 
 ; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
