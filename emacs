@@ -26,6 +26,7 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")
                          ("melpa-stable" . "http://stable.melpa.org/packages/")
+                         ("elpa" . "http://tromey.com/elpa/")
                          ))
 
 ;; Install packages
@@ -33,11 +34,6 @@
 
 ; list the packages you want
 (setq package-list '(projectile magit nlinum web ))
-
-; list the repositories containing them
-(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
