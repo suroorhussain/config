@@ -103,9 +103,6 @@
 ;; Configure to wait a bit longer after edits before starting
 (setq-default flymake-no-changes-timeout '3)
 
-;; Keymaps to navigate to the errors
-(add-hook 'python-mode-hook '(lambda () (define-key python-mode-map "\C-cn" 'flymake-goto-next-error)))
-(add-hook 'python-mode-hook '(lambda () (define-key python-mode-map "\C-cp" 'flymake-goto-prev-error)))
 
 ;; To avoid having to mouse hover for the error message, these functions make flymake error messages
 ;; appear in the minibuffer
