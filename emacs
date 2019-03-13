@@ -33,7 +33,7 @@
 
 
 ; list the packages you want
-(setq package-list '(projectile magit nlinum web ))
+(setq package-list '(projectile magit nlinum web persistent-scratch))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -84,6 +84,8 @@
 ;; Command to activate django mode
 (defun webd () (interactive) (web-mode-set-engine "django"))
 
+;; Setup persitent scratch
+(persistent-scratch-setup-default)
 
 ;; Configure flymake for Python
 (when (load "flymake" t)
