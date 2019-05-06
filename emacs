@@ -5,6 +5,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (tango-dark)))
+ '(package-selected-packages
+   (quote
+    (web-mode persistent-scratch jedi flycheck-pycheckers flycheck-pyflakes flycheck yasnippet web nlinum magit projectile)))
  '(show-paren-style (quote expression)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -61,6 +64,7 @@
 (show-paren-mode t)
 (iswitchb-mode t)
 (projectile-global-mode)
+(setq projectile-keymap-prefix (kbd "C-c p")) ;; Set the keybinding for projectile mode. This needs to be manually set
 (global-nlinum-mode t)
 
 ;; Start server
