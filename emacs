@@ -123,3 +123,8 @@
         (message "%s" (flymake-ler-text err)))))))
 
 (add-hook 'post-command-hook 'show-fly-err-at-point)
+
+(require 'projectile)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(projectile-mode +1)
