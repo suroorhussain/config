@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 #activate virtualenvwrapper commands
-#source /usr/local/bin/virtualenvwrapper.sh
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 #fortune
 fortune
