@@ -9,5 +9,6 @@
 	br = branch
 	co = checkout
 	lg = log -p
+    plg = log --pretty=format:"%C(cyan)%cD%Creset|%Cred%t%Creset|%Cgreen%s%Creset|%C(yellow)%cn"
 	unstage = reset HEAD
 	
