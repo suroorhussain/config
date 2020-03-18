@@ -1,6 +1,6 @@
 [user]
 	name = Suroor Hussain
-	email = surusuroor@gmail.com
+	email = suroorhussain@hamon.in
 [pull]
 	rebase = True
 [alias]
@@ -9,6 +9,6 @@
 	br = branch
 	co = checkout
 	lg = log -p
-    plg = log --pretty=format:"%C(cyan)%cD%Creset|%Cred%t%Creset|%Cgreen%s%Creset|%C(yellow)%cn"
+    plg = log --pretty=format:"%C(cyan)%cD%Creset|%Cred%h%Creset|%Cgreen%s%Creset|%C(yellow)%an"
 	unstage = reset HEAD
 	

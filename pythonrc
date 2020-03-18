@@ -5,3 +5,12 @@ except ImportError:
 else:
     import rlcompleter
     readline.parse_and_bind("tab: complete")
+try:
+    import sys
+    ver_string = "{}.{}.{}".format(sys.version_info.major,
+                                   sys.version_info.minor,
+                                   sys.version_info.micro)
+    sys.ps1 = "[{}] >>> ".format(ver_string)
+    sys.ps2 = "[{}] ... ".format(ver_string)
+except Exception as e:
+    pass
