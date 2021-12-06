@@ -128,6 +128,9 @@ parse_git_branch() {
 }
 export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]%"
 
+# Save history as it happens
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
 #python autocomplete
 export PYTHONSTARTUP=~/.pythonrc
 

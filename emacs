@@ -7,7 +7,7 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(package-selected-packages
    (quote
-    (web-mode persistent-scratch jedi flycheck-pycheckers flycheck-pyflakes flycheck yasnippet web nlinum magit projectile)))
+    (rainbow-mode go-mode rudel togetherly yaml-mode csv-mode web-mode persistent-scratch jedi flycheck-pycheckers flycheck-pyflakes flycheck yasnippet web nlinum magit projectile)))
  '(show-paren-style (quote expression)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -25,10 +25,10 @@
 (global-set-key "\C-ca" 'org-agenda)
 
 ;; Add archives
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+(setq package-archives '(("melpa-stable" . "http://stable.melpa.org/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")
                          ("elpa" . "http://tromey.com/elpa/")
                          ))
 
@@ -78,12 +78,15 @@
 ;;(add-hook 'after-init-hook #'projectile-mode)
 
 ;; Add hooks for golang
-(add-hook 'before-save-hook 'gofmt-before-save)
+(add-hook 'before-save-hook #'gofmt-before-save)
 
 ;; (global-flycheck-mode)
 
 ;; set web-mode as default html editor
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(setq web-mode-engines-alist
+      '(("django"    . "\\.html\\'"))
+)
 
 ;; Command to activate django mode
 (defun webd () (interactive) (web-mode-set-engine "django"))
@@ -128,3 +131,15 @@
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (projectile-mode +1)
+
+;; FLymake venv
+(defun set-flychecker-executables ()
+  "Configure virtualenv for flake8 and lint."
+  (when (get-current-buffer-flake8)
+    (flycheck-set-checker-executable (quote python-flake8)
+                                     (get-current-buffer-flake8)))
+  (when (get-current-buffer-pylint)
+    (flycheck-set-checker-executable (quote python-pylint)
+                                     (get-current-buffer-pylint))))
+(add-hook 'flycheck-before-syntax-check-hook
+          #'set-flychecker-executables 'local)

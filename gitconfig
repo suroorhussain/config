@@ -11,4 +11,6 @@
 	lg = log -p
     plg = log --pretty=format:"%C(cyan)%cD%Creset|%Cred%h%Creset|%Cgreen%s%Creset|%C(yellow)%an"
 	unstage = reset HEAD
+    g = grep -in
+    rbm = rebase master
 	
